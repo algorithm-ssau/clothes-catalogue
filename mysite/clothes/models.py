@@ -28,11 +28,11 @@ class Item(models.Model):
         ('sweatshirts', 'толстовки'),
         ('knitwear', 'трикотаж'),
         ('tshirts', 'футболки'),
-        ('trousers', 'щтаны'),
+        ('trousers', 'штаны'),
         ('shorts', 'шорты'),
         ('accessories', 'аксессуары'),
     )
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=100)
     description = models.TextField(null=True)
     photo = models.FileField(upload_to='item_photo', null=True);
     material = models.CharField(
