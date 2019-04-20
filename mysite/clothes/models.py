@@ -4,30 +4,39 @@ from django.core.validators import MinValueValidator
 from django.db import models
 
 
-class Item(models.Model):
+def image_folder(instance, filename):
+    filename = instance.slug + '.' + filename.split('.')[1]
+    return "{0}/{1}".format(instance.slug, filename)
 
+
+class Item(models.Model):
     MATERIALS = (
+        (None, ''),
         ('cotton', 'хлопок'),
         ('polyamide', 'полиамиды'),
         ('wool', 'шерсть'),
         ('polyester', 'полиэстеры'),
     )
     SIZES = (
-        ('one', 'один размер'),
+        (None, ''),
+        ('one', 'Один размер'),
         ('xs', 'XS'),
         ('s', 'S'),
         ('m', 'M'),
         ('l', 'L'),
         ('xl', 'XL'),
         ('xxl', 'XXL'),
-        ('xxxl', 'XXXL'),
+        ('3xl', '3XL'),
     )
     GENDERS = (
+        (None, ''),
         ('men', 'мужчинам'),
         ('women', 'женщинам'),
+        ('unisex', 'unisex'),
         ('kids', 'детям'),
     )
     CATEGORIES = (
+        (None, ''),
         ('shirts', 'рубашки'),
         ('coats', 'пальто и куртки'),
         ('sweatshirts', 'толстовки'),
@@ -36,8 +45,12 @@ class Item(models.Model):
         ('trousers', 'штаны'),
         ('shorts', 'шорты'),
         ('accessories', 'аксессуары'),
+        ('misc', 'разное'),
+
     )
-    name = models.CharField(max_length=100, verbose_name='Название')
+    name = models.CharField(
+        max_length=100,
+        verbose_name='Название')
     # slug is object URI address
     slug = models.SlugField(
         unique=True,
@@ -46,41 +59,52 @@ class Item(models.Model):
     )
     description = models.TextField(
         null=True,
+        blank=True,
         verbose_name='Описание'
     )
-    photo = models.FileField(
-        upload_to='item_photo',
-        null=True,
+    image = models.ImageField(
+        upload_to=image_folder,
+        default='/media/item_photos/item_no_image.png',
         verbose_name='Изображение'
     )
     material = models.CharField(
+        null=True,
+        blank=True,
         max_length=10,
         choices=MATERIALS,
-        default='cotton',
+        default=None,
         verbose_name='Материал'
     )
     price = models.DecimalField(
+        null=True,
+        blank=True,
         decimal_places=2,
         max_digits=12,
         validators=[MinValueValidator(Decimal('0.01'))],
         verbose_name='Стоимость'
     )
     size = models.CharField(
+        null=True,
+        blank=True,
         max_length=11,
         choices=SIZES,
-        default='xs',
+        default='m',
         verbose_name='Размер'
     )
     gender = models.CharField(
+        null=True,
+        blank=True,
         max_length=8,
         choices=GENDERS,
-        default='men',
+        default=None,
         verbose_name='Пол'
     )
     category = models.CharField(
+        null=True,
+        blank=True,
         max_length=15,
         choices=CATEGORIES,
-        default='shirts',
+        default=None,
         verbose_name='Категория'
     )
     available = models.BooleanField(
@@ -90,5 +114,4 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
-
 
