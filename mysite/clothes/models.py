@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Item(models.Model):
     MATERIALS = (
         ('cotton', 'хлопок'),
@@ -56,6 +57,8 @@ class Item(models.Model):
         choices=CATEGORIES,
         default='shirts'
     )
+
     def __str__(self):
         return self.name
-    
+
+
