@@ -106,3 +106,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+mysite/clothes/templates/clothes/test11\.html
