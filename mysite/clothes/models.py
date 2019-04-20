@@ -41,7 +41,7 @@ class Item(models.Model):
         choices=MATERIALS,
         default='cotton'
     )
-    cost = models.PositiveSmallIntegerField()
+    price = models.DecimalField(max_digits=9, decimal_places=2)
     size = models.CharField(
         max_length=11,
         choices=SIZES,
