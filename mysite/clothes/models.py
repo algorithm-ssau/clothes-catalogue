@@ -5,6 +5,7 @@ from django.db import models
 
 
 class Item(models.Model):
+
     MATERIALS = (
         ('cotton', 'хлопок'),
         ('polyamide', 'полиамиды'),
@@ -36,29 +37,55 @@ class Item(models.Model):
         ('shorts', 'шорты'),
         ('accessories', 'аксессуары'),
     )
-    name = models.CharField(max_length=100)
-    description = models.TextField(null=True)
-    photo = models.FileField(upload_to='item_photo', null=True);
+    name = models.CharField(max_length=100, verbose_name='Название')
+    # slug is object URI address
+    slug = models.SlugField(
+        unique=True,
+        default='',
+        verbose_name='Идентификатор'
+    )
+    description = models.TextField(
+        null=True,
+        verbose_name='Описание'
+    )
+    photo = models.FileField(
+        upload_to='item_photo',
+        null=True,
+        verbose_name='Изображение'
+    )
     material = models.CharField(
         max_length=10,
         choices=MATERIALS,
-        default='cotton'
+        default='cotton',
+        verbose_name='Материал'
     )
-    price = models.DecimalField(decimal_places=2, max_digits=12, validators=[MinValueValidator(Decimal('0.01'))])
+    price = models.DecimalField(
+        decimal_places=2,
+        max_digits=12,
+        validators=[MinValueValidator(Decimal('0.01'))],
+        verbose_name='Стоимость'
+    )
     size = models.CharField(
         max_length=11,
         choices=SIZES,
-        default='xs'
+        default='xs',
+        verbose_name='Размер'
     )
     gender = models.CharField(
         max_length=8,
         choices=GENDERS,
-        default='men'
+        default='men',
+        verbose_name='Пол'
     )
     category = models.CharField(
         max_length=15,
         choices=CATEGORIES,
-        default='shirts'
+        default='shirts',
+        verbose_name='Категория'
+    )
+    available = models.BooleanField(
+        default=True,
+        verbose_name='В наличии'
     )
 
     def __str__(self):
