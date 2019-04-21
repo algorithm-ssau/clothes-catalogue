@@ -9,10 +9,10 @@ from django.utils import timezone
 
 
 def index(request):
-    categoies = Item.CATEGORIES
+    categories = Item.CATEGORIES
     items = Item.objects.all()
     context = {
-        'categories': categoies,
+        'categories': categories,
         'items': items,
     }
 
