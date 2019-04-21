@@ -60,6 +60,7 @@ class Item(models.Model):
     description = models.TextField(
         null=True,
         blank=True,
+        max_length=600,
         verbose_name='Описание'
     )
     image = models.ImageField(
