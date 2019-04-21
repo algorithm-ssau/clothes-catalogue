@@ -64,7 +64,7 @@ class Item(models.Model):
     )
     image = models.ImageField(
         upload_to=image_folder,
-        default='/media/item_photos/item_no_image.png',
+        default='/item_no_image.png',
         verbose_name='Изображение'
     )
     material = models.CharField(

@@ -118,6 +118,13 @@
                 <h5>{{ item.price }} руб.</h5>
                 <p class="card-text">{{ item.description }}</p>
               </div>
+                <div class="card-footer bg-transparent">
+                 {% if  item.available %}
+                  В наличии
+                 {% else %}
+                  Нет в наличии
+                {% endif %}
+               </div>
             </div>
 
           </div>
