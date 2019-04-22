@@ -117,6 +117,14 @@
                 </h4>
                 <h5>{{ item.price }} руб.</h5>
                 <p class="card-text">{{ item.description }}</p>
+                <!--/* Есть встроенные фильтры в django templates
+                {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
+                Также есть
+                {{ value|truncatechars_html:9 }} - если в value лежит html
+                {{ value| truncatewords:2 }} - обрезка до 2 слов
+                {{ value| truncatewords_html:2 }} - обрезка до 2 слов, если в value лежит html
+                Во всех случаях, если строка будет обрезана, будет добавлено "..." в конце.
+                -->
               </div>
                 <div class="card-footer bg-transparent">
                  {% if  item.available %}
