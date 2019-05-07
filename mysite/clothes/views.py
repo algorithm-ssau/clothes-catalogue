@@ -19,6 +19,15 @@ def index(request):
     return render(request, 'clothes/index.html', context)
 
 
+def item(request, item_slug):
+    item = Item.objects.get(slug=item_slug)
+    context = {
+        'item': item
+    }
+
+    return render(request, 'clothes/item.html', context)
+
+
 def hello_world(request):
     return render(request, 'base.html', {})
 
