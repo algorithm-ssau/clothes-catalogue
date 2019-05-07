@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Item name here</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
 </head>
 <body>
     It's item page!!
+    <a href="/item/{{ item.slug }}/">{{ item.name }}</a>
 </body>
 </html>
