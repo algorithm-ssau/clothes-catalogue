@@ -1,9 +1,27 @@
 {% extends 'base_item.html' %}
 
 {% block content %}
+It's item page!!
+<a href="/item/{{ item.slug }}/">{{ item.name }}</a>
 
-    It's item page!!
-    <a href="/item/{{ item.slug }}/">{{ item.name }}</a>
 
+<div class="row">
+    <div class="col-sm-4 my-3">
+        <img src="{{ item.image.url }}" style=" width: 80%; height: 250px">
+        <div class="row ml-0">
+
+        <h4>Цена: {{item.price}}</h4>
+                </div>
+
+    </div>
+    <div class="col-sm-8 ">
+        <h3 class="text-center">{{item.name}}</h3>
+                <hr>
+
+        <p>{{ item.description }}</p>
+        {% lorem%}
+        <hr>
+    </div>
+</div>
 {% endblock content %}
 
