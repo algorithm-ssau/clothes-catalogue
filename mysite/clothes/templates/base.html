@@ -1,0 +1,56 @@
+<!--
+  This is a first-level parent template fpr every template in the app
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+
+    <title>{% block title %}Shopnamme{% endblock title %}</title>
+
+    {% load static %}
+    {% load bootstrap4 %}
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+
+    {% block custom_static %}
+
+    {% endblock custom_static%}
+</head>
+
+<body>
+
+
+<!-- Navigation -->
+{% block navigation_bar %}
+
+{% endblock navigation_bar %}
+
+
+<!-- Page Content -->
+<div class="container">
+    {% block content %}
+
+    {% endblock content%}
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+
+    {% block footer %}
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Samara University Team ONE 2019</p>
+    </div>
+    {% endblock footer%}
+    <!-- /.container -->
+</footer>
+</body>
+</html>

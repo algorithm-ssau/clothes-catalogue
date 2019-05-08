@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Item name here</title>
+{% extends 'base_item.html' %}
 
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
-</head>
-<body>
+{% block content %}
+
     It's item page!!
     <a href="/item/{{ item.slug }}/">{{ item.name }}</a>
-</body>
-</html>
+
+{% endblock content %}
+

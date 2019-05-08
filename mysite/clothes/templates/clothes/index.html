@@ -1,75 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base_homepage.html' %}
 
-<head>
+{% block content %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<div class="row">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
-    {% load static %}
-  {% load bootstrap4 %}
-  <script src="{% bootstrap_jquery_url %}"></script>
-  {% bootstrap_javascript %}
-  {% bootstrap_css %}
-
-</head>
-
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-3">
+    <div class="col-lg-3">
 
         <h1 class="my-4">Shop Name</h1>
+        <!--
         <div class="list-group">
-          {% for category in categories %}
-          <a href="#" class="list-group-item">{{ category }}</a>
-          {% endfor %}
-        </div>
+                  {% for category in categories %}
+                  <a href="#" class="list-group-item">{{ category }}</a>
+                  {% endfor %}
+                </div>
+                -->
 
-      </div>
-      <!-- /.col-lg-3 -->
+    </div>
+    <!-- /.col-lg-3 -->
 
-      <div class="col-lg-9">
-        <!-- begining of carousel -->
+    <div class="col-lg-9">
+        <!--  carousel -->
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -105,60 +65,47 @@
         <!-- end of carousel -->
         <br>
         <div class="row">
-          {% for item in items %}
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="/item/{{ item.slug }}">
-                <img class="card-img-top" src="{{ item.image.url }}" alt="" style="width: 100%; max-height: 250px;" >
-              </a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="/item/{{ item.slug }}">{{ item.name }}</a>
-                </h4>
-                <h5>{{ item.price }} руб.</h5>
-                <p class="card-text">{{ item.description }}</p>
-                <!--/* Есть встроенные фильтры в django templates
-                {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
-                Также есть
-                {{ value|truncatechars_html:9 }} - если в value лежит html
-                {{ value| truncatewords:2 }} - обрезка до 2 слов
-                {{ value| truncatewords_html:2 }} - обрезка до 2 слов, если в value лежит html
-                Во всех случаях, если строка будет обрезана, будет добавлено "..." в конце.
-                -->
-              </div>
-                <div class="card-footer bg-transparent">
-                 {% if  item.available %}
-                  В наличии
-                 {% else %}
-                  Нет в наличии
-                {% endif %}
-               </div>
-            </div>
+            {% for item in items %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a href="/item/{{ item.slug }}">
+                        <img class="card-img-top" src="{{ item.image.url }}" alt=""
+                             style="width: 100%; max-height: 250px;">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="/item/{{ item.slug }}">{{ item.name }}</a>
+                        </h4>
+                        <h5>{{ item.price }} руб.</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <!--/* Есть встроенные фильтры в django templates
+                        {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
+                        Также есть
+                        {{ value|truncatechars_html:9 }} - если в value лежит html
+                        {{ value| truncatewords:2 }} - обрезка до 2 слов
+                        {{ value| truncatewords_html:2 }} - обрезка до 2 слов, если в value лежит html
+                        Во всех случаях, если строка будет обрезана, будет добавлено "..." в конце.
+                        -->
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        {% if item.available %}
+                        В наличии
+                        {% else %}
+                        Нет в наличии
+                        {% endif %}
+                    </div>
+                </div>
 
-          </div>
-         {% endfor %}
+            </div>
+            {% endfor %}
 
 
         </div>
         <!-- /.row -->
 
-      </div>
-      <!-- /.col-lg-9 -->
-
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-9 -->
 
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-</body>
-
-</html>
+</div>
+<!-- /.row -->
+{% endblock content %}

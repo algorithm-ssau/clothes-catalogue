@@ -1,7 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Item
 
-
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
@@ -30,4 +29,3 @@ def item(request, item_slug):
 
 def hello_world(request):
     return render(request, 'base.html', {})
-
