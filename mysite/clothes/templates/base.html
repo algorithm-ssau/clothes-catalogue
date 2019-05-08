@@ -32,9 +32,59 @@
 <body>
 <div id="page-container">
     <div id="content-wrap">
+
         <!-- Navigation -->
         {% block navigation_bar %}
 
+        <p class="text-center my-4" style="font-size: 50px; font-family: SimSun">
+            Shop Name
+            <a href="/" class="stretched-link"></a>
+        </p>
+        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
+            <!-- Brand -->
+            <a class="navbar-brand" href="/">Shop Name</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+
+
+                <!-- Dropdown Women -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown">
+                        Women
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+
+                <!-- Dropdown Men -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop_men" data-toggle="dropdown">
+                        Men
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+
+                <!-- Dropdown Kids -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop_kids" data-toggle="dropdown">
+                        Kids & Baby
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
         {% endblock navigation_bar %}
 
         <!-- Page Content -->
