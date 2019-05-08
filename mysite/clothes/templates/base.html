@@ -19,38 +19,41 @@
     <script src="{% bootstrap_jquery_url %}"></script>
     {% bootstrap_javascript %}
     {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'clothes/footer.css' %}">
+
 
     {% block custom_static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
 
     {% endblock custom_static%}
 </head>
 
 <body>
+<div id="page-container">
+    <div id="content-wrap">
+        <!-- Navigation -->
+        {% block navigation_bar %}
 
+        {% endblock navigation_bar %}
 
-<!-- Navigation -->
-{% block navigation_bar %}
+        <!-- Page Content -->
+        <div class="container">
+            {% block content %}
 
-{% endblock navigation_bar %}
-
-
-<!-- Page Content -->
-<div class="container">
-    {% block content %}
-
-    {% endblock content%}
-</div>
-<!-- /.container -->
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-
-    {% block footer %}
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Samara University Team ONE 2019</p>
+            {% endblock content%}
+        </div>
+        <!-- /.container -->
     </div>
-    {% endblock footer%}
-    <!-- /.container -->
-</footer>
+    <footer id="footer">
+        <hr>
+        <div class="container bg-light">
+            <p class="text-center"> this is footer
+        </div>
+        </p>
+    </footer>
+</div>
+
+
 </body>
 </html>
