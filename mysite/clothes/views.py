@@ -27,14 +27,16 @@ def item_detail(request, item_slug):
     return render(request, 'clothes/item.html', context)
 
 
-def category(request, category_slug):
+def category(request, sex, category):
     items = Item.objects.all()
     context = {
-        'category_slug': category_slug,
+        'sex': sex,
+        'category': category,
         'items': items,
     }
 
-    return render(request, 'clothes/index.html', context)
+    return render(request, 'clothes/category.html', context)
+
 
 def test(request):
     return render(request, 'clothes/test11.html', {})
