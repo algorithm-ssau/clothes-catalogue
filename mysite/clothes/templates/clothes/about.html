@@ -1,0 +1,21 @@
+{% extends 'base_about.html' %}
+
+{% block content %}
+
+<h1>Page about SHOP</h1>
+<a href="/">HOME</a>
+
+
+<div class="row">
+    </div>
+    <div class="col-sm-12 ">
+        <h3 class="text-center">{{item.name}}</h3>
+        <hr>
+        <p>{{ item.description }}</p>
+        {% lorem%}
+        <hr>
+    </div>
+</div>
+
+{% endblock content %}
+

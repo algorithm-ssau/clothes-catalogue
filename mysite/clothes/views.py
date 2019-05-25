@@ -58,5 +58,9 @@ def category(request, sex, category):
     return render(request, 'clothes/category.html', context)
 
 
+def about(request):
+    return render(request, 'clothes/about.html', {})
+
+
 def test(request):
     return render(request, 'clothes/test11.html', {})
