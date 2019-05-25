@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 from django.shortcuts import get_object_or_404, render
 from .models import Item
 
@@ -29,8 +31,26 @@ def item_detail(request, item_slug):
 
 def category(request, sex, category):
     items = Item.objects.all()
+
+    if sex != 'any':
+        if sex == 'women':
+            items = items.filter(gender__in=['women', 'unisex'])
+        if sex == 'men':
+            items = items.filter(gender__in=['men', 'unisex'])
+        if sex == 'kids':
+            items = items.filter(gender__in=['kids'])
+
+    if category != 'all':
+        if category in map(itemgetter(0), Item.CATEGORIES):
+            items = items.filter(category=category)
+        else:
+            if category == 'tops':
+                items = items.filter(category__in=['shirts', 'coats', 'sweatshirts', 'blouses', 'pullovers', 'tshirts'])
+            if category == 'bottoms':
+                items = items.filter(category__in=['trousers', 'shorts', 'skirts'])
+
     context = {
-        'sex': sex,
+        'gender': sex,
         'category': category,
         'items': items,
     }

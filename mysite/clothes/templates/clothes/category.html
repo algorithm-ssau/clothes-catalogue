@@ -1,7 +1,47 @@
 {% extends 'base_category.html' %}
 
 {% block content %}
-<h1> {{ sex }}</h1>
+<h1> {{ gender }}</h1>
 <h1> {{ category }}</h1>
+
+<!-- item cards -->
+<div class="row">
+    {% for item in items %}
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+            <a href="/item/{{ item.slug }}">
+                <img class="card-img-top" src="{{ item.image.url }}" alt=""
+                     style="width: 100%; max-height: 350px;">
+            </a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="/item/{{ item.slug }}">{{ item.name }}</a>
+                </h4>
+                <h5>{{ item.price }} руб.</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <!--/* Есть встроенные фильтры в django templates
+                {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
+                Также есть
+                {{ value|truncatechars_html:9 }} - если в value лежит html
+                {{ value| truncatewords:2 }} - обрезка до 2 слов
+                {{ value| truncatewords_html:2 }} - обрезка до 2 слов, если в value лежит html
+                Во всех случаях, если строка будет обрезана, будет добавлено "..." в конце.
+                -->
+            </div>
+            <div class="card-footer bg-transparent">
+                {% if item.available %}
+                В наличии
+                {% else %}
+                Нет в наличии
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+<!-- /.row -->
+<!-- /item cards -->
+
 {% endblock content %}
 
