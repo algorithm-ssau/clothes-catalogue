@@ -65,8 +65,8 @@
                 <h4 class="card-title">
                     <a href="/item/{{ item.slug }}">{{ item.name | truncatechars:50}}</a>
                 </h4>
-                <h5>{{ item.price | truncatechars:50}} руб.</h5>
-                <p class="card-text">{{ item.description |truncatechars:200}}</p>
+                <h5>{{ item.price |default_if_none:"Цена не указана" | truncatechars:50  }} руб.</h5>
+                <p class="card-text">{{ item.description |truncatechars:200 |default_if_none:"Описание отстутствует" }}</p>
                 <!--/* Есть встроенные фильтры в django templates
                 {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
                 Также есть
