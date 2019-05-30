@@ -52,6 +52,18 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+        @media only screen and (min-width: 768px) {
+        .dropdown:hover .dropdown-menu {
+        display: block;
+             }
+            }
+            </style>
+
 
         <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
@@ -60,7 +72,7 @@
                 <ul class="navbar-nav mr-auto">
                     <!-- Dropdown Women -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Women
                         </a>
                         <div class="dropdown-menu">
@@ -130,6 +142,17 @@
 
             {% endblock content%}
         </div>
+        <script>
+$('.dropdown-toggle').click(function(e) {
+ if ($(document).width() > 768) {
+ e.preventDefault();
+ var url = $(this).attr('href');
+ if (url !== '#') {
+ window.location.href = url;
+ }
+ }
+});
+</script>
         <!-- /.container -->
     </div>
     <footer id="footer">
