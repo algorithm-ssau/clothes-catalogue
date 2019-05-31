@@ -2,3 +2,7 @@ a {
     color: deeppink;
 }
 
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+   }
