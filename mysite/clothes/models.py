@@ -1,13 +1,14 @@
+from django.db import models
+from django.core.validators import MinValueValidator
 from decimal import Decimal
 
-from django.core.validators import MinValueValidator
-from django.db import models
-
+class ProductManager(models.Manager):
+    def all(self, *args, **kwargs):
+        return super(ProductManager, self).get_queryset().filter(available=True)
 
 def image_folder(instance, filename):
     filename = instance.slug + '.' + filename.split('.')[1]
     return "{0}/{1}".format(instance.slug, filename)
-
 
 class Item(models.Model):
     MATERIALS = (
@@ -115,6 +116,7 @@ class Item(models.Model):
         default=True,
         verbose_name='В наличии'
     )
+    objects = ProductManager()
 
     def __str__(self):
         return self.name
