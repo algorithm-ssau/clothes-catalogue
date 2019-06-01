@@ -1,21 +1,27 @@
 {% extends 'base_about.html' %}
-
 {% block content %}
 
-<h1>Page about SHOP</h1>
-<a href="/">HOME</a>
-
-
 <div class="row">
-    </div>
-    <div class="col-sm-12 ">
-        <h3 class="text-center">{{item.name}}</h3>
-        <hr>
-        <p>{{ item.description }}</p>
-        {% lorem%}
-        <hr>
-    </div>
+	<div class="col-sm-12 ">
+	   	<h3 class="text-center">{{item.name}}</h3>
+	  	<p>{{ item.description }}</p>
+	   	
+	   	<p>	САМАЯ ВАЖНАЯ ИНФОРМАЦИЯ:<br>
+			— чтобы заказать или спросить, что угодно пишите МНЕ;<br>
+			— доставка по Москве в пределах метро БЕСПЛАТНО, по России — 300 рублей;<br>
+			— при покупке от 900 рублей ЭКСКЛЮЗИВНЫЙ СТИКЕРПАК В ПОДАРОК;<br>
+			— при покупке от 3 вещей ЧЕТВЁРТАЯ В ПОДАРОК.<br>
+			<br>
+			Лучший интернет-сэконд за последнюю тысячу лет реализует:<br>
+			— принципы разумного потребления;<br>
+			— ваше желание быть стильным и изысканным;<br>
+			— уважение к слонам.<br>
+			<br>
+			Добро пожаловать! :3</p>
+	   	<p></p>
+	</div>
 </div>
 
-{% endblock content %}
+<a href="/">вернуться в магазин</a>
 
+{% endblock content %}

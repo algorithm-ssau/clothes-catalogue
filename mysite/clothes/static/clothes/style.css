@@ -1,8 +1,13 @@
 a {
-    color: deeppink;
+    	color: deeppink;
 }
 
+a.main_title:hover {
+	text-decoration: none;
+    	color: #fff;
+    	background: #e24486;
+}
 
 .dropdown:hover .dropdown-menu {
-  display: block;
-   }
+  	display: block;
+}
