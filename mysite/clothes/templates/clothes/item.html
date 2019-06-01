@@ -12,6 +12,7 @@ It's item page!!
         <div class="row ml-0">
             <p class="text-left my-3" style="font-size: 25px">
                 Цена: <strong>{{item.price}}</strong></p>
+
                 </div>
 
     </div>
@@ -20,8 +21,11 @@ It's item page!!
                 <hr>
 
         <p>{{ item.description }}</p>
+
         {% lorem%}
         <hr>
+        <a href='add_to_cart/{{ item.slug }}'>
+            <button class="btn btn-danger">Add to Cart</button></a>
     </div>
 </div>
 

@@ -9,5 +9,11 @@ a.main_title:hover {
 }
 
 .dropdown:hover .dropdown-menu {
-  	display: block;
+  display: block;
+   }
+.nav navbar-nav navbar-right {
+float: right;
+}
+.nav-item{
+float: right;
 }
