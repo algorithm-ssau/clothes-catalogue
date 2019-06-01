@@ -24,7 +24,9 @@ SECRET_KEY = 'omr_p)bssy24e3n&9w1w5we5bn$u#&g)ro4@qfd+w2o&6(4t^f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+'lisiara.pythonanywhere.com'
+]
 
 # Application definition
 
