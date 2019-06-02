@@ -14,11 +14,13 @@
                      style="width: 100%; max-height: 350px;">
             </a>
             <div class="card-body">
-                <h4 class="card-title">
+                <h4 class="card-title" style="text-align: center;">
                     <a href="/item/{{ item.slug }}">{{ item.name }}</a>
                 </h4>
-                <h5>{{ item.price }} руб.</h5>
-                <p class="card-text">{{ item.description }}</p>
+
+                <h5 style="text-align: center;">{{ item.price }} &#8381</h5>
+                <!-- <p class="card-text">{{ item.description }}</p> -->
+                
                 <!--/* Есть встроенные фильтры в django templates
                 {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
                 Также есть

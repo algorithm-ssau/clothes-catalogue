@@ -48,25 +48,30 @@
 
 <!-- end of carousel -->
 <br>
-        <p class="text-center my-4" style="font-size: 30px; font-family: SimSun">
-            New arrivals
+        <p class="text-center my-4" style="font-size: 30px;">
+            новые поступления
         </p>
 <hr>
-<!-- item cards -->
+
+<!-- карточки item -->
 <div class="row">
     {% for item in items %}
     <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
             <a href="/item/{{ item.slug }}">
-                <img class="card-img-top" src="{{ item.image.url }}" alt=""
-                     style="width: 100%; max-height: 350px;">
+                <img    class="card-img-top" 
+                        src="{{ item.image.url }}" alt=""
+                        style="width: 100%; max-height: 350px;">
             </a>
+
             <div class="card-body">
-                <h4 class="card-title">
-                    <a href="/item/{{ item.slug }}">{{ item.name | truncatechars:50}}</a>
+                <h4 class="card-title" style="text-align: center;"">
+                    <a href="/item/{{ item.slug }}">{{ item.name | truncatechars:50 }}</a>
                 </h4>
-                <h5>{{ item.price |default_if_none:"Цена не указана" | truncatechars:50  }} руб.</h5>
-                <p class="card-text">{{ item.description |truncatechars:200 |default_if_none:"Описание отстутствует" }}</p>
+                <h5 style="text-align: center;">{{ item.price | truncatechars:50 }} &#8381</h5>
+                
+                <!-- <p class="card-text">{{ item.description |truncatechars:200 |default_if_none:"Описание отстутствует" }}</p> -->
+                
                 <!--/* Есть встроенные фильтры в django templates
                 {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
                 Также есть
@@ -76,19 +81,8 @@
                 Во всех случаях, если строка будет обрезана, будет добавлено "..." в конце.
                 -->
             </div>
-            <div class="card-footer bg-transparent">
-                {% if item.available %}
-                В наличии
-                {% else %}
-                Нет в наличии
-                {% endif %}
-            </div>
         </div>
-
     </div>
     {% endfor %}
 </div>
-<!-- /.row -->
-<!-- /item cards -->
 {% endblock content %}
-
