@@ -17,6 +17,11 @@ class Item(models.Model):
         ('polyamide', 'полиамиды'),
         ('wool', 'шерсть'),
         ('polyester', 'полиэстеры'),
+        ('silk','шелк'),
+        ('velveteen','вельвет'),
+        ('viscose','вискоза'),
+        ('satin', 'сатин'),
+
     )
 
     SIZES = (
@@ -155,7 +160,7 @@ class Cart(models.Model):
 
 
     def remove_from_cart(selfself, product_slug):
-        cart = self
+        cart = selfself
         product= Item.objects.get(slug=product_slug)
         for cart_item in cart.items.all():
             if cart_item.product == product:
