@@ -8,5 +8,5 @@ class ItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Item, ItemAdmin)
-# admin.site.register(Cart)
-# admin.site.register(CartItem)
+admin.site.register(Cart)
+admin.site.register(CartItem)

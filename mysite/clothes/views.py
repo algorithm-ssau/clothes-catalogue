@@ -17,7 +17,7 @@ def index(request):
     context = {
         'categories': categories,
         'items': items,
-        # 'cart': cart,
+        'cart': cart,
 
     }
 
@@ -26,10 +26,10 @@ def index(request):
 
 def item_detail(request, item_slug):
     item = Item.objects.get(slug=item_slug)
-    # cart = Cart.objects.first()
+    cart = Cart.objects.first()
     context = {
         'item': item,
-        # 'cart': cart,
+        'cart': cart,
     }
 
     return render(request, 'clothes/item.html', context)
@@ -60,7 +60,7 @@ def category(request, sex, category):
         'gender': sex,
         'category': category,
         'items': items,
-        # 'cart': cart,
+            # 'cart': cart,
     }
 
     return render(request, 'clothes/category.html', context)
@@ -69,47 +69,42 @@ def category(request, sex, category):
 def about(request):
     return render(request, 'clothes/about.html', {})
 
+def cart_view(request):
+    cart = Cart.objects.first()
 
-# def test(request):
-#     return render(request, 'clothes/test11.html', {})
-
-
-# def cart_view(request):
-#     cart = Cart.objects.first()
-
-#     context = {
-#         'cart':cart
-#     }
-#     return render(request, 'clothes/cart.html', context)
+    context = {
+        'cart':cart
+    }
+    return render(request, 'clothes/cart.html', context)
 
 
-# def add_to_cart_view(request, product_slug):
-#     try:
-#         cart_id = request.session['cart_id']
-#         cart = Cart.objects.get(id=cart_id)
-#         request.session['total'] = cart.items.count()
-#     except:
-#         cart = Cart()
-#         cart.save()
-#         cart_id=cart.id
-#         request.session['cart_id'] = cart.id
-#         cart = Cart.objects.get(id=cart_id)
-#         product = Item.objects.get(slug=product_slug)
-#         cart.add_to_cart(product.slug)
-#         return HttpResponseRedirect(reverse('cart'))
+def add_to_cart_view(request, product_slug):
+    try:
+        cart_id = request.session['cart_id']
+        cart = Cart.objects.get(id=cart_id)
+        request.session['total'] = cart.items.count()
+    except:
+        cart = Cart()
+        cart.save()
+        cart_id=cart.id
+        request.session['cart_id'] = cart.id
+        cart = Cart.objects.get(id=cart_id)
+        product = Item.objects.get(slug=product_slug)
+        cart.add_to_cart(product.slug)
+        return HttpResponseRedirect(reverse('cart'))
 
 
-# def remove_from_cart_view(request, product_slug):
-#     try:
-#         cart_id = request.session['cart_id']
-#         cart = Cart.objects.get(id=cart_id)
-#         request.session['total'] = cart.items.count()
-#     except:
-#         cart = Cart()
-#         cart.save()
-#         cart_id = cart.id
-#         request.session['cart_id'] = cart.id
-#         cart = Cart.objects.get(id=cart_id)
-#         product = Item.objects.get(slug=product_slug)
-#         cart.remove_from_cart(product.slug)
-#         return HttpResponseRedirect(reverse('cart'))
+def remove_from_cart_view(request, product_slug):
+    try:
+        cart_id = request.session['cart_id']
+        cart = Cart.objects.get(id=cart_id)
+        request.session['total'] = cart.items.count()
+    except:
+        cart = Cart()
+        cart.save()
+        cart_id = cart.id
+        request.session['cart_id'] = cart.id
+        cart = Cart.objects.get(id=cart_id)
+        product = Item.objects.get(slug=product_slug)
+        cart.remove_from_cart(product.slug)
+        return HttpResponseRedirect(reverse('cart'))
