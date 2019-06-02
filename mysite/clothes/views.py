@@ -75,15 +75,16 @@ def test(request):
 
 
 def cart_view(request):
-    cart = Cart.objects.first()
 
+    cart = Cart.objects.first()
     context = {
+
         'cart':cart
     }
     return render(request, 'clothes/cart.html', context)
 
 
-def add_to_cart_view(request, product_slug):
+def add_to_cart_view(request, item_slug):
     try:
         cart_id = request.session['cart_id']
         cart = Cart.objects.get(id=cart_id)
@@ -94,12 +95,12 @@ def add_to_cart_view(request, product_slug):
         cart_id=cart.id
         request.session['cart_id'] = cart.id
         cart = Cart.objects.get(id=cart_id)
-        product = Item.objects.get(slug=product_slug)
+        product = Item.objects.get(slug=item_slug)
         cart.add_to_cart(product.slug)
-        return HttpResponseRedirect(reverse('cart'))
+        return HttpResponseRedirect(reverse('/cart/'))
 
 
-def remove_from_cart_view(request, product_slug):
+def remove_from_cart_view(request, item_slug):
     try:
         cart_id = request.session['cart_id']
         cart = Cart.objects.get(id=cart_id)
@@ -110,6 +111,6 @@ def remove_from_cart_view(request, product_slug):
         cart_id = cart.id
         request.session['cart_id'] = cart.id
         cart = Cart.objects.get(id=cart_id)
-        product = Item.objects.get(slug=product_slug)
+        product = Item.objects.get(slug=item_slug)
         cart.remove_from_cart(product.slug)
-        return HttpResponseRedirect(reverse('cart'))
+        return HttpResponseRedirect(reverse('/cart/'))

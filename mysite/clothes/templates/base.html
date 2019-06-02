@@ -126,9 +126,13 @@
 
                 {% endblock navigation_bar %}
 
-                <!-- Page Content -->
-                <div class="container">
-                    {% block content %}
+                </ul>
+ <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart/">Cart<span class='badge'>{{ cart.items.count }} </span></a>
+                    </li>
+                </ul>
+            </div>
 
                     {% endblock content%}
                 </div>
