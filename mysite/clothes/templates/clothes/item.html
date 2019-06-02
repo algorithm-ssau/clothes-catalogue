@@ -6,8 +6,8 @@
         <img src="{{ item.image.url }}" style=" width: 80%; height: 250px">
         <p>
             {{item.price}} &#8381<br>
-            {{item.material}}<br>
-            {{item.size}}<br>
+            {{item.get_material_display}}<br>
+            {{item.get_size_display}}<br>
         </p>
     </div>
 

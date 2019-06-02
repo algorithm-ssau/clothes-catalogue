@@ -27,7 +27,7 @@ class Item(models.Model):
         ('l', 'L'),
         ('xl', 'XL'),
         ('xxl', 'XXL'),
-        ('3xl', 'XXL'),
+        ('xxxl', 'XXXL'),
     )
 
     GENDERS = (
