@@ -1,33 +1,20 @@
 {% extends 'base_item.html' %}
 
 {% block content %}
-
-It's item page!!
-<a href="/item/{{ item.slug }}/">{{ item.name }}</a>
-
-
-<div class="row">
+<div class="row" style="margin-top: 30px">
     <div class="col-sm-4 my-3">
         <img src="{{ item.image.url }}" style=" width: 80%; height: 250px">
-        <div class="row ml-0">
-            <p class="text-left my-3" style="font-size: 25px">
-                Цена: <strong>{{item.price}}</strong></p>
-
-                </div>
-
     </div>
+
     <div class="col-sm-8 ">
         <h3 class="text-center">{{item.name}}</h3>
-                <hr>
-
-        <p>{{ item.description }}</p>
-
-        {% lorem%}
         <hr>
+        <p>{{ item.description }}</p>
+        <strong>{{item.price}} &#8381</strong>
+        <hr>
+        
         <a href='add_to_cart/{{ item.slug }}'>
             <button class="btn btn-danger">Add to Cart</button></a>
     </div>
 </div>
-
 {% endblock content %}
-
