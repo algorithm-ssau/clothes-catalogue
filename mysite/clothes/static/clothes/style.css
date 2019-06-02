@@ -1,19 +1,39 @@
 a {
-    	color: deeppink;
+    color: deeppink;
 }
 
-a.main_title:hover {
+a:hover {
+	color: #fff;
+    background: deeppink;
 	text-decoration: none;
-    	color: #fff;
-    	background: #e24486;
+}
+
+.copyright {
+	color: grey;
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#copyright_link {
+	color: grey;
+	text-decoration: underline;
+}
+
+#copyright_link:hover {
+	color: black;
+	text-decoration: underline;
+	background: inherit;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
-   }
-.nav navbar-nav navbar-right {
-float: right;
+	display: block;
 }
+
+.nav navbar-nav navbar-right {
+	float: right;
+}
+
 .nav-item{
-float: right;
+	float: right;
 }

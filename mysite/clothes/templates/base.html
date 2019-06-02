@@ -1,162 +1,150 @@
-<!--
-  This is a first-level parent template fpr every template in the app
- -->
-
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="author">
 
-<head>
+        <title>{% block title %}Shopnamme{% endblock title %}</title>
 
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <meta content="" name="description">
-    <meta content="" name="author">
+        {% load static %}
+        {% load bootstrap4 %}
+        <script src="{% bootstrap_jquery_url %}"></script>
+        {% bootstrap_javascript %}
+        {% bootstrap_css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'clothes/footer.css' %}">
 
-    <title>{% block title %}Shopnamme{% endblock title %}</title>
+        {% block custom_static %}
 
-    {% load static %}
-    {% load bootstrap4 %}
-    <script src="{% bootstrap_jquery_url %}"></script>
-    {% bootstrap_javascript %}
-    {% bootstrap_css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'clothes/footer.css' %}">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
 
+        {% endblock custom_static%}
+    </head>
 
-    {% block custom_static %}
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
 
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
+                {% block main_brand %}
+                <p class="text-center my-4" style="font-size: 50px; font-family: SimSun;">
+                    <h1 style="text-align: center;">
+                        <a class="main_title" href="/about">СЛОН-ОРИГИНАЛ</a>
+                    </h1>
 
-    {% endblock custom_static%}
-</head>
-
-<body>
-<div id="page-container">
-    <div id="content-wrap">
-
-        {% block main_brand %}
-        <p class="text-center my-4" style="font-size: 50px; font-family: SimSun;">
-            <h1 style="text-align: center;">
-                <a class="main_title" href="/about">СЛОН-ОРИГИНАЛ</a>
-            </h1>
-            <h5 style="text-align: center;">
-                <a class="main_title" href="/about">сэконд и сток</a>
-            </h5>
-            <a href="/" class="stretched-link"></a>            
-        </p>
-        {% endblock main_brand %}
+                    <h5 style="text-align: center;">
+                        <a class="main_title" href="/about">сэконд и сток</a>
+                    </h5>
+                    <a href="/" class="stretched-link"></a>            
+                </p>
+                {% endblock main_brand %}
 
 
-        <!-- Navigation -->
-        {% block navigation_bar %}
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
+                <!-- Navigation -->
+                {% block navigation_bar %}
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                        crossorigin="anonymous"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                        crossorigin="anonymous"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
 
-        <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <!-- Brand -->
-                <a class="navbar-brand" href="/">Shop Name</a>
-                <ul class="navbar-nav mr-auto navbar-left">
-                    <!-- Dropdown Women -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Women
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/category/women/all/">All</a>
-                            <a class="dropdown-item" href="/category/women/tops/">Tops</a>
-                            <a class="dropdown-item" href="/category/women/dresses/">Dresses</a>
-                            <a class="dropdown-item" href="/category/women/bottoms/">Bottoms</a>
-                            <a class="dropdown-item" href="/category/women/accessories/">Accessories</a>
-                        </div>
-                    </li>
+                <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
+                    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                        <!-- Brand -->
+                        <ul class="navbar-nav mr-auto navbar-left">
+                            <!-- Dropdown Women -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Women
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/category/women/all/">All</a>
+                                    <a class="dropdown-item" href="/category/women/tops/">Tops</a>
+                                    <a class="dropdown-item" href="/category/women/dresses/">Dresses</a>
+                                    <a class="dropdown-item" href="/category/women/bottoms/">Bottoms</a>
+                                    <a class="dropdown-item" href="/category/women/accessories/">Accessories</a>
+                                </div>
+                            </li>
 
-                    <!-- Dropdown Men -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_men" data-toggle="dropdown">
-                            Men
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/category/men/all/">All</a>
-                            <a class="dropdown-item" href="/category/men/tops/">Tops</a>
-                            <a class="dropdown-item" href="/category/men/bottoms/">Bottoms</a>
-                            <a class="dropdown-item" href="/category/men/accessories/">Accessories</a>
-                        </div>
-                    </li>
+                            <!-- Dropdown Men -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop_men" data-toggle="dropdown">
+                                    Men
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/category/men/all/">All</a>
+                                    <a class="dropdown-item" href="/category/men/tops/">Tops</a>
+                                    <a class="dropdown-item" href="/category/men/bottoms/">Bottoms</a>
+                                    <a class="dropdown-item" href="/category/men/accessories/">Accessories</a>
+                                </div>
+                            </li>
 
-                    <!-- Dropdown Kids -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop_kids" data-toggle="dropdown">
-                            Kids & Baby
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/category/kids/all/">All</a>
-                            <a class="dropdown-item" href="/category/kids/tops/">Tops</a>
-                            <a class="dropdown-item" href="/category/kids/bottoms/">Bottoms</a>
-                            <a class="dropdown-item" href="/category/kids/accessories/">Accessories</a>
-                        </div>
-                    </li>
+                            <!-- Dropdown Kids -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop_kids" data-toggle="dropdown">
+                                    Kids & Baby
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/category/kids/all/">All</a>
+                                    <a class="dropdown-item" href="/category/kids/tops/">Tops</a>
+                                    <a class="dropdown-item" href="/category/kids/bottoms/">Bottoms</a>
+                                    <a class="dropdown-item" href="/category/kids/accessories/">Accessories</a>
+                                </div>
+                            </li>
 
-                    <!-- Link Accessories -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/category/any/accessories/">Accessories</a>
-                    </li>
+                            <!-- Link Accessories -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/category/any/accessories/">Accessories</a>
+                            </li>
+                        </ul>
+         <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cart">Cart<span class='badge'>{{ cart.items.count }} </span></a>
+                            </li>
+                        </ul>
+                    </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
+                    <!-- Brand at the navbar center -->
+                    <!--    <div class="mx-auto order-0">
+                            <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>-->
 
 
-                </ul>
- <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cart">Cart<span class='badge'>{{ cart.items.count }} </span></a>
-                    </li>
-                </ul>
+                </nav>
+
+                {% endblock navigation_bar %}
+
+                <!-- Page Content -->
+                <div class="container">
+                    {% block content %}
+
+                    {% endblock content%}
+                </div>
+
+                <!-- /.container -->
             </div>
-
-            <!-- Brand at the navbar center -->
-            <!--    <div class="mx-auto order-0">
-                    <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>-->
-
-
-        </nav>
-
-        {% endblock navigation_bar %}
-
-        <!-- Page Content -->
-        <div class="container">
-            {% block content %}
-
-            {% endblock content%}
+            
+            <footer id="footer">
+                <hr>
+                <div class="container bg-light">
+                    <p class="copyright">
+                        &copy; Слон-Оригинал · 
+                        <a id="copyright_link" href="/about">о магазине</a>
+                    </p>
+                </div>
+            </footer>
         </div>
-
-        <!-- /.container -->
-    </div>
-    <footer id="footer">
-        <hr>
-        <div class="container bg-light">
-            <p class="text-center"> this is footer
-        </div>
-        </p>
-    </footer>
-</div>
-
-
-</body>
+    </body>
 </html>
