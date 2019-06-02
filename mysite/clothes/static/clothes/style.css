@@ -10,17 +10,17 @@ a:hover {
 
 .copyright {
 	color: grey;
-	font-size: 20px;
+	font-size: 15px;
 	text-align: center;
 	text-transform: uppercase;
 }
 
-#copyright_link {
+.copyright a {
 	color: grey;
 	text-decoration: underline;
 }
 
-#copyright_link:hover {
+.copyright a:hover {
 	color: black;
 	text-decoration: underline;
 	background: inherit;
