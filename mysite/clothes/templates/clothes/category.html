@@ -1,12 +1,14 @@
 {% extends 'base_category.html' %}
 
 {% block content %}
-{% if gender|length == 5 %}
+{% if gender|length == 5  %}
 <h1 align="center">Женский раздел</h1>
 {% elif gender|length == 3 %}
 <h1 align="center">Мужской раздел</h1>
-{% elif gender|length == 4%}
+{% elif gender|length == 4 %}
 <h1 align="center">Детский раздел</h1>
+{% elif gender|length == 9 %}
+<h1 align="center">Общий раздел</h1>
 {% endif %}
 <h1 align="center">{{ category }}</h1>
 
