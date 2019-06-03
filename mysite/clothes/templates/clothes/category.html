@@ -1,20 +1,22 @@
 {% extends 'base_category.html' %}
 
 {% block content %}
-<!--{% if gender|length == 5  %}-->
-<!--<h1 align="center">Женский раздел</h1>-->
-<!--{% elif gender|length == 3 %}-->
-<!--<h1 align="center">Мужской раздел</h1>-->
-<!--{% elif gender|length == 4 %}-->
-<!--<h1 align="center">Детский раздел</h1>-->
-<!--{% elif gender|length == 9 %}-->
-<!--<h1 align="center">Общий раздел</h1>-->
-<!--{% endif %}-->
-<h1 align="center">{{ category }}</h1>
 
+{% if category == "all"  %}
+<h1 align="center">всё</h1>
+{% elif category == "tops" %}
+<h1 align="center">верх</h1>
+{% elif category == "bottoms" %}
+<h1 align="center">низ</h1>
+{% elif category == "dresses" %}
+<h1 align="center">платья</h1>
+{% elif category == "accessories" %}
+<h1 align="center">аксессуары</h1>
+{% endif %}
 
 <!-- item cards -->
 <div class="row">
+    
     {% for item in items reversed %}
     <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
@@ -27,25 +29,11 @@
                     <a href="/item/{{ item.slug }}">{{ item.name }}</a>
                 </h4>
 
-                <h5 style="text-align: center;">{{ item.price }} &#8381</h5>
-                <!-- <p class="card-text">{{ item.description }}</p> -->
-                
-                <!--/* Есть встроенные фильтры в django templates
-                {{ value|truncatechars:9 }} - если нужно обрезать переменную value до 9 символов
-                Также есть
-                {{ value|truncatechars_html:9 }} - если в value лежит html
-                {{ value| truncatewords:2 }} - обрезка до 2 слов
-                {{ value| truncatewords_html:2 }} - обрезка до 2 слов, если в value лежит html
-                Во всех случаях, если строка будет обрезана, будет добавлено "..." в конце.
-                -->
+                <h5 style="text-align: center;">{{ item.price }} &#8381</h5>                
             </div>
         </div>
-
     </div>
     {% endfor %}
+
 </div>
-<!-- /.row -->
-<!-- /item cards -->
-
 {% endblock content %}
-
