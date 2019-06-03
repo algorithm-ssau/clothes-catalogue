@@ -39,7 +39,7 @@ def category(request, sex, category):
     items = Item.objects.all()
     # cart = Cart.objects.first()
 
-    if sex != 'any':
+    if sex != 'anygender':
         if sex == 'women':
             items = items.filter(gender__in=['women', 'unisex'])
         if sex == 'men':
