@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'bootstrap3',  # using bootstrap 4
     'bootstrap4',
     'crispy_forms',
-    'favicon',
     'django_cleanup',
 ]
 
