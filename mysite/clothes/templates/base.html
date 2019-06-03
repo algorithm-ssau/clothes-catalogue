@@ -1,158 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-        <meta content="" name="description">
-        <meta content="" name="author">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
 
-        <title>{% block title %}Shopnamme{% endblock title %}</title>
-        <link rel="shortcut icon" href="https://static.wooicon.com/files/e/le/pha/nt/eea46cbd6bb09beef56e58861bd29d38/elephant.ico" type="image/png" />
-        {% load static %}
-        {% load bootstrap4 %}
-        <script src="{% bootstrap_jquery_url %}"></script>
-        {% bootstrap_javascript %}
-        {% bootstrap_css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'clothes/footer.css' %}">
+    <title>{% block title %}СЛОН-ОРИГИНАЛ{% endblock title %}</title>
+    <link rel="shortcut icon" href="https://www.iconsdb.com/icons/preview/deep-pink/elephant-xxl.png" type="image/png" />
 
-        {% block custom_static %}
+    {% load static %}
+    {% load bootstrap4 %}
 
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'clothes/footer.css' %}">
 
-        {% endblock custom_static%}
-    </head>
+    {% block custom_static %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'clothes/style.css' %}">
+    {% endblock custom_static%}
+</head>
 
-    <body>
-        <div id="page-container">
-            <div id="content-wrap">
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
 
-                {% block main_brand %}
-                <p class="text-center my-4" style="font-size: 50px; font-family: SimSun;">
-                    <h1 style="text-align: center;">
-                        <a class="main_title" href="/">СЛОН-ОРИГИНАЛ</a>
-                    </h1>
+            {% block main_brand %}
+            <p class="text-center my-4" style="font-size: 50px; font-family: SimSun;">
+                <h1 style="text-align: center;">
+                    <a class="main_title" href="/">СЛОН-ОРИГИНАЛ</a>
+                </h1>
 
-                    <h5 style="text-align: center;">
-                        <a class="main_title" href="/about">сэконд и сток</a>
-                    </h5>
-                    <a href="/" class="stretched-link"></a>            
-                </p>
-                {% endblock main_brand %}
+                <h5 style="text-align: center;">
+                    <a class="main_title" href="/about">сэконд и сток</a>
+                </h5>      
+            </p>
+            {% endblock main_brand %}
 
+            <!-- навигация -->
+            {% block navigation_bar %}
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
 
-                <!-- Navigation -->
-                {% block navigation_bar %}
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                        crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                        crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
+                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                    <!-- брэнд -->
+                    <ul class="navbar-nav mr-auto navbar-left">
 
+                        <!-- dropdown women -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                женщины
+                            </a>
 
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/category/women/all/">всё</a>
+                                <a class="dropdown-item" href="/category/women/tops/">верх</a>
+                                <a class="dropdown-item" href="/category/women/bottoms/">низ</a>
+                                <a class="dropdown-item" href="/category/women/accessories/">аксессуары</a>
+                                <a class="dropdown-item" href="/category/women/dresses/">платья</a>
+                            </div>
+                        </li>
 
+                        <!-- dropdown men -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop_men" data-toggle="dropdown">
+                                мужчины
+                            </a>
 
-                <nav class="navbar navbar-expand-md bg-light navbar-light sticky-top">
-                    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                        <!-- Brand -->
-                        <ul class="navbar-nav mr-auto navbar-left">
-                            
-                            <!-- dropdown women -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop_women" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    женщины
-                                </a>
-                                
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/category/women/all/">всё</a>
-                                    <a class="dropdown-item" href="/category/women/tops/">верхняя одежда</a>
-                                    <a class="dropdown-item" href="/category/women/bottoms/">нижняя одежда</a>
-                                    <a class="dropdown-item" href="/category/women/accessories/">аксессуары</a>
-                                    <a class="dropdown-item" href="/category/women/dresses/">платья</a>
-                                </div>
-                            </li>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/category/men/all/">всё</a>
+                                <a class="dropdown-item" href="/category/men/tops/">верх</a>
+                                <a class="dropdown-item" href="/category/men/bottoms/">низ</a>
+                                <a class="dropdown-item" href="/category/men/accessories/">аксессуары</a>
+                            </div>
+                        </li>
 
-                            <!-- dropdown men -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop_men" data-toggle="dropdown">
-                                    мужчины
-                                </a>
-                                
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/category/men/all/">всё</a>
-                                    <a class="dropdown-item" href="/category/men/tops/">верхняя одежда</a>
-                                    <a class="dropdown-item" href="/category/men/bottoms/">нижняя одежда</a>
-                                    <a class="dropdown-item" href="/category/men/accessories/">аксессуары</a>
-                                </div>
-                            </li>
+                        <!-- dropdown kids -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop_kids" data-toggle="dropdown">
+                                дети
+                            </a>
 
-                            <!-- dropdown kids -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbardrop_kids" data-toggle="dropdown">
-                                    дети
-                                </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/category/kids/all/">всё</a>
+                                <a class="dropdown-item" href="/category/kids/tops/">верх</a>
+                                <a class="dropdown-item" href="/category/kids/bottoms/">низ</a>
+                                <a class="dropdown-item" href="/category/kids/accessories/">аксессуары</a>
+                            </div>
+                        </li>
 
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/category/kids/all/">всё</a>
-                                    <a class="dropdown-item" href="/category/kids/tops/">верхняя одежда</a>
-                                    <a class="dropdown-item" href="/category/kids/bottoms/">нижняя одежда</a>
-                                    <a class="dropdown-item" href="/category/kids/accessories/">аксессуары</a>
-                                </div>
-                            </li>
+                        <!-- link accessories -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/anygender/accessories/" id="navbardrop_accessories">аксессуары</a>
+                        </li>
+                    </ul>
 
-                            <!-- link accessories -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category/anygender/accessories/" id="navbardrop_accessories">аксессуары</a>
-                            </li>
-                        </ul>
-                        
-                        <ul class="nav navbar-nav navbar-right">
-                        </ul>
-                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
 
-                    <!-- Brand at the navbar center -->
+                <!-- brand at the navbar center -->
                     <!--    <div class="mx-auto order-0">
                             <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>-->
-
-
-                </nav>
-
-                {% endblock navigation_bar %}
-                <div class="container">
-                    {% block content %}
-
-                </ul>
-<!-- <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cart/">Cart<span class='badge'>{{ cart.items.count }} </span></a>
-                    </li>
-                </ul>-->
-            </div>
-
-                    {% endblock content%}
-                </div>
-
-                <!-- /.container -->
-            </div>
+            </nav>
+            {% endblock navigation_bar %}
             
-            <footer id="footer">
-                <hr>
-                <div class="container bg-light">
-                    <p class="copyright">
-                        &copy; Слон-Оригинал · 
-                        <a href="/about">о магазине</a>
-                    </p>
-                </div>
-            </footer>
+            <div class="container">
+            {% block content %}
+            {% endblock content%}
+            </div>
         </div>
-    </body>
+
+        <footer id="footer">
+            <hr>
+            <div class="container bg-light">
+                <p class="copyright">
+                    &copy; Слон-Оригинал · 
+                    <a href="/about">о магазине</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
 </html>
