@@ -32,7 +32,6 @@ def item_detail(request, item_slug):
         'item': item,
         # 'cart': cart,
     }
-
     return render(request, 'clothes/item.html', context)
 
 
