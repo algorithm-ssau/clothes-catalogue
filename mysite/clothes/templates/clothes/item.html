@@ -2,12 +2,16 @@
 
 {% block content %}
 <div class="row" style="margin-top: 30px">
+    
     <div class="col-sm-4 my-3">
-        <img src="{{ item.image.url }}" style=" width: 80%; height: 250px">
-        <p>
-            Цена {{item.price}} &#8381<br>
-            Материал {{item.get_material_display}}<br>
-            Размер {{item.get_size_display}}<br>
+        <p style="text-align: center;">
+            <img src="{{ item.image.url }}" style=" width: 80%; height: 250px">
+        </p>
+
+        <p style="text-align: center;">
+            цена &middot {{item.price}} &#8381<br>
+            материал &middot {{item.get_material_display}}<br>
+            размер &middot {{item.get_size_display}}<br>
         </p>
     </div>
 
@@ -16,9 +20,6 @@
         <hr>
         <p>{{ item.description }}</p>
         <hr>
-        
-     <!--   <a href='add_to_cart/{{ item.slug }}'>
-            <button class="btn btn-danger">Add to Cart</button></a>-->
     </div>
 </div>
 {% endblock content %}
